@@ -1,7 +1,6 @@
 'use client'
 
-import Background from "../Components/Background"
-
+import Background from "@/app/Components/Background"
 export default function Chatbot() {
   return (
     <div className="bg-black min-h-screen text-white flex items-center justify-center">

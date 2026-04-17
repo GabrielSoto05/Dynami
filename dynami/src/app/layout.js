@@ -1,7 +1,4 @@
-export const metadata = {
-  title: 'Dynami',
-  description: 'FSM fitness chatbot',
-}
+import "./globals.css"
 
 export default function RootLayout({ children }) {
   return (
