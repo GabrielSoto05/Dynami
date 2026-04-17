@@ -1,9 +1,12 @@
-import React from 'react'
+'use client'
 
-function page() {
+import Background from "../Components/Background"
+
+export default function Chatbot() {
   return (
-    <div>page</div>
+    <div className="bg-black min-h-screen text-white flex items-center justify-center">
+      <Background/>
+      <h1>Chatbot page</h1>
+    </div>
   )
 }
-
-export default page

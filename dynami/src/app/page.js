@@ -129,7 +129,7 @@ export default function Home() {
       ))}
       </div>
 
-      <Link href="/chatbot" className='flex bg-green-400 rounded-2xl p-2 mt-5 z-10'>
+      <Link href="/chatbot" className='flex bg-green-400 rounded-2xl p-2 mt-5 relative z-10'>
   
     <h1 className='text-3xl w-3xs text-center'>Start Now</h1>
   
