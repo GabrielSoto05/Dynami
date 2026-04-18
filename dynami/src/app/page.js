@@ -1,5 +1,9 @@
 "use client"
 
+import { Bebas_Neue } from 'next/font/google';
+
+const beba = Bebas_Neue({ weight: '400', subsets: ['latin'] });
+
 import { motion } from "motion/react";
 import { Dumbbell, Zap, Target } from "lucide-react"; 
 
@@ -130,26 +134,27 @@ export default function Home() {
     <motion.div className='flex flex-col justify-center gap-3 items-center ' variants={containerVariants} initial="hidden" animate="visible">
       <motion.div variants={itemVariants}>
       <div 
-      className='flex justify-center items-center bg-green-400 p-4 rounded-full w-24 h-24  '>
+      className='flex justify-center items-center bg-gradient-to-br from-green-400 to-green-700 p-4 rounded-full w-24 h-24  '>
         <Dumbbell size={50} strokeWidth={2.0} className='rotate-90 items-center'/>
       </div>
       </motion.div>
 
       <motion.div variants={itemVariants}>
       <h1 
-      className=' text-green-400 text-8xl'
+      className={`${beba.className} text-green-400 text-8xl`}
       strokeWidth={5.0} >FORGE YOUR</h1>
       </motion.div>
       <motion.div variants={itemVariants}>
       <h1 
-      className=' text-white text-8xl'
+      className={`${beba.className} text-white text-8xl`}
       strokeWidth={5.0}>PERFECT WORKOUT</h1>
       </motion.div>
 
       <motion.div variants={itemVariants}>
       <p 
-      className='text-gray-600 text-2xl text-center p-8'>
-        AI-powered training tailored to your goals.  Get <br/> ready to unlock your full potential with <br/> personalized workout plans.
+      className={`${beba.className} text-gray-600 text-2xl text-center p-8`}
+      >
+        Chatbot-tailored to your goals.  Get <br/> ready to unlock your full potential with <br/> personalized workout plans.
       </p>
       </motion.div>
       <motion.div variants={itemVariants} className='flex gap-3'>
@@ -162,9 +167,9 @@ export default function Home() {
       </motion.div>
 
       <motion.div variants={itemVariants}>
-      <Link href="/chatbot" className='flex bg-green-400 rounded-2xl p-2 mt-5 relative z-10'>
+      <Link href="/chatbot" className='flex bg-gradient-to-br from-green-400 to-green-700 hover:scale-110 rounded-2xl p-2 mt-5 relative z-10 transition-all duration-200'>
   
-    <h1 className='text-3xl w-3xs text-center'>Start Now</h1>
+    <h1 className={`${beba.className} text-3xl w-3xs text-center`}>Start Now</h1>
   
 </Link>
       </motion.div>
