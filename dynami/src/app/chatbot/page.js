@@ -29,8 +29,72 @@ export default function Chatbot() {
     }
 
   return (
-    <div className="bg-black min-h-screen text-white flex items-center justify-center">
+    <div className="flex flex-col bg-black min-h-screen ">
       <Background/>
+
+    <div className="flex items-center justify-center flex-1">
+  {currentState === 'GREET' && (
+    <div className="flex flex-col items-center gap-4">
+      <h1 className="text-white text-4xl">Welcome to Dynami</h1>
+      <p className="text-gray-400">Let's build your perfect workout</p>
+      <button 
+        onClick={() => handleTransition('start', null)}
+        className="bg-green-400 text-black px-8 py-3 rounded-2xl text-xl">
+        Get Started
+      </button>
+    </div>
+  )}
+
+  {currentState === 'ASK_AGE' && (
+    <div className="flex flex-col items-center gap-4">
+      <h1 className="text-white text-4xl">What is your age?</h1>
+      <div className="flex gap-3">
+        <button onClick={() => handleTransition('Under 18', 'age')} className="border border-green-400 text-white px-6 py-3 rounded-2xl">Under 18</button>
+        <button onClick={() => handleTransition('18-44', 'age')} className="border border-green-400 text-white px-6 py-3 rounded-2xl">18-44</button>
+        <button onClick={() => handleTransition('45+', 'age')} className="border border-green-400 text-white px-6 py-3 rounded-2xl">45+</button>
+      </div>
+    </div>
+  )}
+
+  {currentState === 'ASK_WEIGHT' && (
+    <div className="flex flex-col items-center gap-4">
+      <h1 className="text-white text-4xl">What is your weight?</h1>
+      <div className="flex gap-3 flex-wrap justify-center">
+        <button onClick={() => handleTransition('Under 100lbs', 'weight')} className="border border-green-400 text-white px-6 py-3 rounded-2xl">Under 100lbs</button>
+        <button onClick={() => handleTransition('100-150', 'weight')} className="border border-green-400 text-white px-6 py-3 rounded-2xl">100-150lbs</button>
+        <button onClick={() => handleTransition('150-175', 'weight')} className="border border-green-400 text-white px-6 py-3 rounded-2xl">150-175lbs</button>
+        <button onClick={() => handleTransition('175-200', 'weight')} className="border border-green-400 text-white px-6 py-3 rounded-2xl">175-200lbs</button>
+        <button onClick={() => handleTransition('200+', 'weight')} className="border border-green-400 text-white px-6 py-3 rounded-2xl">200lbs+</button>
+      </div>
+    </div>
+  )}
+
+  {currentState === 'ASK_GOAL' && (
+    <div className="flex flex-col items-center gap-4">
+      <h1 className="text-white text-4xl">What is your goal?</h1>
+      <div className="flex flex-col gap-3">
+        <button onClick={() => handleTransition('Lose BF(BodyFat)/Gain Muscle', 'goals')} className="border border-green-400 text-white px-6 py-3 rounded-2xl">Lose BF / Gain Muscle</button>
+        <button onClick={() => handleTransition('Gain Muscle/Strength/Maintain BF(BodyFat)', 'goals')} className="border border-green-400 text-white px-6 py-3 rounded-2xl">Gain Muscle & Maintain BF</button>
+        <button onClick={() => handleTransition('Maintain Muscle/Gain Strength/Lose BF(Bodyfat)', 'goals')} className="border border-green-400 text-white px-6 py-3 rounded-2xl">Maintain Muscle / Lose BF</button>
+      </div>
+    </div>
+  )}
+
+  {currentState === 'RECOMMEND' && (
+    <div className="flex flex-col items-center gap-4">
+      <h1 className="text-white text-4xl">Your Workout</h1>
+      <p className="text-gray-400">Age: {answers.age} | Weight: {answers.weight} | Goal: {answers.goals}</p>
+      <button onClick={() => handleTransition('restart', null)} className="bg-green-400 text-black px-8 py-3 rounded-2xl text-xl">Start Over</button>
+    </div>
+  )}
+</div>
+      
+ 
+    
+    
+      
+
+      
 
       
     </div>

@@ -137,12 +137,12 @@ export default function Home() {
 
       <motion.div variants={itemVariants}>
       <h1 
-      className='text-green-400 text-8xl'
+      className=' text-green-400 text-8xl'
       strokeWidth={5.0} >FORGE YOUR</h1>
       </motion.div>
       <motion.div variants={itemVariants}>
       <h1 
-      className='text-white text-8xl'
+      className=' text-white text-8xl'
       strokeWidth={5.0}>PERFECT WORKOUT</h1>
       </motion.div>
 
