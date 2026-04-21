@@ -1,9 +1,12 @@
 'use client'
 
+
 import { motion } from "motion/react"
 
 export default function Background() {
   return (
+    <>
+    
     <div className="absolute inset-0 pointer-events-none">
       <div className="absolute inset-0 opacity-20">
         <div
@@ -38,5 +41,7 @@ export default function Background() {
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       />
     </div>
+   
+    </>
   )
 }

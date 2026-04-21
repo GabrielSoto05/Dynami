@@ -7,6 +7,7 @@ const beba = Bebas_Neue({ weight: '400', subsets: ['latin'] });
 import { motion } from "motion/react";
 import { Dumbbell, Zap, Target } from "lucide-react"; 
 
+
 import  Link  from 'next/link'
 import "./globals.css";
 
@@ -60,6 +61,7 @@ export default function Home() {
 
     
     <>
+    
     <div className="flex items-center justify-center min-h-screen size-full relative overflow-auto bg-black ">
       {/* Animated Background Grid */}
       <div className="absolute inset-0 opacity-20">
@@ -177,6 +179,7 @@ export default function Home() {
     
     
     </div>
+    
     </>
   );
 }
