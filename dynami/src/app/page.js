@@ -159,9 +159,9 @@ export default function Home() {
         Chatbot-tailored to your goals.  Get <br/> ready to unlock your full potential with <br/> personalized workout plans.
       </p>
       </motion.div>
-      <motion.div variants={itemVariants} className='flex gap-3'>
+      <motion.div variants={itemVariants} className='flex gap-3 '>
       {items.map((item) => (
-        <motion.div key={item.id} variants={itemVariants} className="flex items-center gap-2 border border-green-400 rounded-full px-4 py-2">
+        <motion.div key={item.id} variants={itemVariants} className="flex items-center gap-2 border border-green-400 rounded-full px-4 py-2  ">
           <item.icon size={18} strokeWidth={2} className="text-green-400"/>
           <span className="text-white font-medium">{item.name}</span>
         </motion.div>
