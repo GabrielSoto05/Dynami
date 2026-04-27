@@ -12,7 +12,7 @@ export default function Home() {
 
   const items = [
     { id: 1, icon: Target,   name: "Goal-Driven"  },
-    { id: 2, icon: Zap,      name: "Smart AI"     },
+    { id: 2, icon: Zap,      name: "Finite State Machine"     },
     { id: 3, icon: Dumbbell, name: "Customized"   },
   ]
 
