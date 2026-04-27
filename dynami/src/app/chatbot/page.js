@@ -17,12 +17,12 @@ export default function Chatbot() {
   const [loadingMessage, setLoadingMessage] = useState('Analyzing your information...')
   const messagesEndRef                      = useRef(null)
 
-  // Auto-scroll to latest message
+ 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
 
-  // ── Workout data (unchanged) ──────────────────────────────────────────────
+ 
   const workouts = {
     'Lose BF(BodyFat)/Gain Muscle': {
       'Under 18': {
@@ -329,8 +329,6 @@ export default function Chatbot() {
     }
   }
 
-  // ── Animation variants ────────────────────────────────────────────────────
-
   const chatWindowVariants = {
     hidden:  { opacity: 0, y: 40, scale: 0.97 },
     visible: { opacity: 1, y: 0, scale: 1,
@@ -380,7 +378,7 @@ export default function Chatbot() {
       transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } }
   }
 
-  // ── Logic (unchanged) ─────────────────────────────────────────────────────
+ 
 
   function handleTransition(input, value) {
     setAnswers(prev => ({ ...prev, [value]: input }))
@@ -444,7 +442,7 @@ export default function Chatbot() {
     setCurrentState('STARTING')
   }, [])
 
-  // ── Render ────────────────────────────────────────────────────────────────
+  
 
   return (
     <>
@@ -453,7 +451,7 @@ export default function Chatbot() {
 
         <div className="flex-1 flex items-center justify-center relative z-10 p-3 sm:p-6 md:p-8">
 
-          {/* ── Loading screen ── */}
+       
           <AnimatePresence>
             {isLoading && (
               <motion.div
@@ -464,7 +462,7 @@ export default function Chatbot() {
                 transition={{ duration: 0.4 }}
                 className="flex flex-col items-center justify-center gap-6 sm:gap-8 w-full max-w-xs sm:max-w-sm px-4"
               >
-                {/* Pulsing rings + spinning dumbbell */}
+         
                 <div className="relative flex items-center justify-center">
                   <motion.div
                     className="absolute w-24 h-24 sm:w-28 sm:h-28 rounded-full border border-green-400/30"
@@ -488,7 +486,7 @@ export default function Chatbot() {
                   </motion.div>
                 </div>
 
-                {/* Cycling status message */}
+            
                 <AnimatePresence mode="wait">
                   <motion.p
                     key={loadingMessage}
@@ -502,7 +500,7 @@ export default function Chatbot() {
                   </motion.p>
                 </AnimatePresence>
 
-                {/* Progress bar */}
+          
                 <div className="w-full bg-gray-900 rounded-full h-1.5 overflow-hidden">
                   <motion.div
                     className="h-full bg-green-400 rounded-full"
@@ -515,7 +513,7 @@ export default function Chatbot() {
             )}
           </AnimatePresence>
 
-          {/* ── Chat window ── */}
+        
           <AnimatePresence mode="wait">
             {!isLoading && currentState !== 'RECOMMEND' && (
               <motion.div
@@ -527,7 +525,7 @@ export default function Chatbot() {
                 animate="visible"
                 exit="exit"
               >
-                {/* Header */}
+             
                 <motion.div
                   className="flex gap-2 border-b border-green-400/20 w-full p-3 sm:p-4 items-center shrink-0"
                   initial={{ opacity: 0, y: -10 }}
@@ -545,7 +543,7 @@ export default function Chatbot() {
                   </motion.div>
                   <h1 className="text-white text-lg sm:text-xl font-bold tracking-wide">DYNAMI</h1>
 
-                  {/* Live indicator */}
+                
                   <div className="ml-auto flex items-center gap-1.5">
                     <motion.div
                       className="w-2 h-2 rounded-full bg-green-400"
@@ -556,7 +554,7 @@ export default function Chatbot() {
                   </div>
                 </motion.div>
 
-                {/* Messages */}
+             
                 <div className="flex-1 overflow-y-auto p-3 sm:p-6 flex flex-col gap-3 min-h-0">
                   <AnimatePresence initial={false}>
                     {messages.map((msg, index) => (
@@ -568,7 +566,7 @@ export default function Chatbot() {
                         animate="visible"
                         className={`flex ${msg.from === 'user' ? 'justify-end' : 'justify-start'}`}
                       >
-                        {/* Bot avatar dot */}
+                     
                         {msg.from === 'bot' && (
                           <div className="w-6 h-6 rounded-full bg-green-400/20 border border-green-400/40 flex items-center justify-center mr-2 mt-1 shrink-0">
                             <Dumbbell size={12} className="rotate-90 text-green-400" />
@@ -587,7 +585,7 @@ export default function Chatbot() {
                   <div ref={messagesEndRef} />
                 </div>
 
-                {/* Choice buttons */}
+              
                 <div className="p-3 sm:p-4 border-t border-green-400/20 shrink-0">
                   <AnimatePresence mode="wait">
                     <motion.div
@@ -665,7 +663,7 @@ export default function Chatbot() {
             )}
           </AnimatePresence>
 
-          {/* ── Recommend screen ── */}
+       
           <AnimatePresence>
             {!isLoading && currentState === 'RECOMMEND' && (
               <motion.div
@@ -675,7 +673,7 @@ export default function Chatbot() {
                 initial="hidden"
                 animate="visible"
               >
-                {/* Plan title */}
+             
                 <motion.div variants={titleVariants} className="text-center">
                   <p className="text-green-400/60 text-xs sm:text-sm tracking-widest uppercase mb-1">Your Plan</p>
                   <h1 className="text-white text-2xl sm:text-3xl md:text-4xl font-bold">
@@ -683,7 +681,7 @@ export default function Chatbot() {
                   </h1>
                 </motion.div>
 
-                {/* Day cards — 1 col mobile, 2 col sm+ */}
+          
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 w-full">
                   {Object.entries(workouts[answers.goals]?.[answers.age]?.days || {}).map(([day, data]) => (
                     <motion.div
@@ -715,7 +713,7 @@ export default function Chatbot() {
                   ))}
                 </div>
 
-                {/* Start Over — gradient from new code + arrow preserved */}
+              
                 <motion.button
                   variants={titleVariants}
                   whileHover={{ scale: 1.06, boxShadow: '0 0 28px rgba(74,222,128,0.4)' }}
