@@ -10,7 +10,7 @@ const beba = Bebas_Neue({ weight: '400', subsets: ['latin'] });
 
 export default function Chatbot() {
 
-  const [currentState, setCurrentState]     = useState('GREET')
+  const [currentState, setCurrentState]     = useState('STARTING')
   const [answers, setAnswers]               = useState({ age: null, weight: null, goals: null })
   const [messages, setMessages]             = useState([])
   const [isLoading, setLoading]             = useState(false)
@@ -384,7 +384,6 @@ export default function Chatbot() {
     setAnswers(prev => ({ ...prev, [value]: input }))
 
     const transitions = {
-      GREET:      { start: 'STARTING' },
       STARTING:   { 'Yes': 'ASK_AGE', 'No': 'STARTING' },
       ASK_AGE:    { 'Under 18': 'ASK_WEIGHT', '18-44': 'ASK_WEIGHT', '45+': 'ASK_WEIGHT' },
       ASK_WEIGHT: { 'Under 100lbs': 'ASK_GOAL', '100-150lbs': 'ASK_GOAL', '150-175lbs': 'ASK_GOAL', '175-200lbs': 'ASK_GOAL', '200lbs+': 'ASK_GOAL' },
