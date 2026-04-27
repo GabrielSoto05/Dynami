@@ -592,7 +592,7 @@ function handleTransition(input, value){
           
          
           <div className="flex gap-2 border-b border-green-400/20 w-full p-4 items-center">
-            <Dumbbell size={36} strokeWidth={2.0} className='bg-green-400 rounded-full p-2 rotate-90'/>
+            <Dumbbell size={36} strokeWidth={2.0} className='bg-green-400 bg-gradient-to-br from-green-400 to-green-700 rounded-full p-2 rotate-90'/>
             <h1 className="text-white text-xl font-bold">DYNAMI</h1>
           </div>
 
@@ -675,7 +675,7 @@ function handleTransition(input, value){
               </motion.div>
             ))}
           </div>
-          <button onClick={() => handleTransition('restart', null)} className="bg-green-400 text-black px-8 py-3 rounded-2xl text-xl hover:scale-105 transition-all duration-200">
+          <button onClick={() => handleTransition('restart', null)} className="bg-green-400 bg-gradient-to-br from-green-400 to-green-700 text-black px-8 py-3 rounded-2xl text-xl hover:scale-105 transition-all duration-200">
             Start Over
           </button>
         </motion.div>
