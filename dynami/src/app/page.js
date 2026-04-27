@@ -70,7 +70,7 @@ export default function Home() {
     <>
       <div className="flex items-center justify-center min-h-screen w-full relative overflow-hidden bg-black">
 
-        {/* ── Animated grid background ── */}
+        
         <div className="absolute inset-0 opacity-20 pointer-events-none">
           <div
             className="absolute inset-0"
@@ -85,43 +85,38 @@ export default function Home() {
           />
         </div>
 
-        {/* ── Floating geometric decorations ── */}
-        {/* Top-left diamond */}
+       
         <motion.div
           className="absolute top-10 left-4 sm:top-20 sm:left-10 w-16 h-16 sm:w-32 sm:h-32 border-2 border-[#00ff88]/30 rotate-45 pointer-events-none"
           animate={{ y: [0, -20, 0], rotate: [45, 65, 45] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         />
 
-        {/* Bottom-right square */}
+       
         <motion.div
           className="absolute bottom-16 right-6 sm:bottom-32 sm:right-20 w-14 h-14 sm:w-24 sm:h-24 border-2 border-[#00ff88]/20 pointer-events-none"
           animate={{ y: [0, 20, 0], rotate: [0, 20, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
         />
 
-        {/* Mid-right glow orb */}
         <motion.div
           className="absolute top-1/3 right-1/4 w-12 h-12 sm:w-16 sm:h-16 bg-[#00ff88]/10 rounded-full blur-xl pointer-events-none"
           animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0.6, 0.3] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
         />
 
-        {/* Mid-left glow orb */}
         <motion.div
           className="absolute bottom-1/4 left-1/4 w-14 h-14 sm:w-20 sm:h-20 bg-[#00ff88]/10 rounded-full blur-xl pointer-events-none"
           animate={{ scale: [1, 1.8, 1], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         />
 
-        {/* Extra corner orb — only visible on larger screens */}
         <motion.div
           className="absolute top-1/4 left-1/3 w-8 h-8 sm:w-12 sm:h-12 bg-[#00ff88]/5 rounded-full blur-2xl pointer-events-none hidden sm:block"
           animate={{ scale: [1, 2, 1], opacity: [0.2, 0.4, 0.2] }}
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
 
-        {/* ── Main content ── */}
         <motion.div
           className="flex flex-col justify-center gap-3 sm:gap-4 items-center relative z-10 px-4 py-10 sm:py-0 w-full max-w-4xl mx-auto"
           variants={containerVariants}
@@ -129,7 +124,6 @@ export default function Home() {
           animate="visible"
         >
 
-          {/* Logo icon */}
           <motion.div variants={logoVariants}>
             <motion.div
               className="flex justify-center items-center bg-gradient-to-br from-green-400 to-green-700 p-3 sm:p-4 rounded-full w-16 h-16 sm:w-24 sm:h-24 cursor-pointer"
@@ -148,7 +142,6 @@ export default function Home() {
             </motion.div>
           </motion.div>
 
-          {/* Headline */}
           <motion.div variants={itemVariants} className="text-center overflow-hidden">
             <motion.h1
               className={`${beba.className} text-green-400 text-5xl sm:text-7xl md:text-8xl leading-none`}
@@ -171,14 +164,13 @@ export default function Home() {
             </motion.h1>
           </motion.div>
 
-          {/* Subheading */}
           <motion.div variants={itemVariants}>
             <p className={`${beba.className} text-gray-500 text-base sm:text-xl md:text-2xl text-center px-4 sm:px-8 pt-2 leading-relaxed`}>
               Chatbot-tailored to your goals. Get ready to unlock<br className="hidden sm:block" /> your full potential with personalized workout plans.
             </p>
           </motion.div>
 
-          {/* Feature badges */}
+        
           <motion.div
             variants={itemVariants}
             className="flex flex-wrap gap-2 sm:gap-3 justify-center mt-1"
@@ -202,7 +194,7 @@ export default function Home() {
             ))}
           </motion.div>
 
-          {/* CTA button */}
+       
           <motion.div variants={buttonVariants} className="mt-3 sm:mt-5">
             <Link href="/chatbot">
               <motion.div
@@ -214,7 +206,7 @@ export default function Home() {
                 }}
                 whileTap={{ scale: 0.97 }}
               >
-                {/* Shimmer sweep on hover */}
+           
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
                   initial={{ x: '-100%' }}
